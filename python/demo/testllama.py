@@ -1,6 +1,8 @@
 import llamacpp
+import os
 
-model_path = "../../models/7B/ggml-model-q4_0.bin"
+curdir = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(curdir, "../../models/7B/ggml-model-q4_0.bin")
 
 params = llamacpp.gpt_params(model_path,
     "Hi, I'm a llama.",
