@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "llamacpp"
-version = "0.1.2"
+version = "0.1.3"
 description = "Python bindings for @ggerganov's llama.cpp"
 authors = ["Thomas Antony <mail@thomasantony.com>"]
 license = "MIT"
@@ -26,4 +26,5 @@ script = "build.py"
 generate-setup-file = true
 
 [tool.poetry.scripts]
+llamacpp-convert = 'llamacpp.quantize:main'
 llamacpp-quantize = 'llamacpp.quantize:main'

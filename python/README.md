@@ -27,10 +27,10 @@ ls ./models
 65B 30B 13B 7B tokenizer_checklist.chk tokenizer.model
 ```
 
-Convert the weights to GGML format using `convert-pth-to-ggml.py` and use the `llamacpp-quantize` command to quantize them into INT4. For example, for the 7B parameter model, run
+Convert the weights to GGML format using `llamacpp-convert`. Then use `llamacpp-quantize` to quantize them into INT4. For example, for the 7B parameter model, run
 
 ```
-python3 convert-pth-to-ggml.py models/7B/ 1
+llamacpp-convert ./models/7B/ 1
 llamacpp-quantize ./models/7B/
 ```
 
