@@ -6,9 +6,16 @@
 
 ## Install python package
 
+### From PyPI
+
+```
+pip install llamacpp
+```
+
+### From source
+
 ```
 poetry install
-python python/demo/testllama.py
 ```
 
 ## Get the model weights
@@ -26,9 +33,28 @@ Convert the weights to GGML format using `convert-pth-to-ggml.py` and use the `l
 python3 convert-pth-to-ggml.py models/7B/ 1
 llamacpp-quantize ./models/7B/
 ```
+
+## Run demo script
+
+```
+import llamacpp
+import os
+
+model_path = "./models/7B/ggml-model-q4_0.bin"
+params = llamacpp.gpt_params(model_path,
+"Hi, I'm a llama.",
+4096,
+40,
+0.1,
+0.7,
+2.0)
+model = llamacpp.PyLLAMA(model_path, params)
+model.predict("Hello, I'm a llama.", 10)
+```
+
 ## ToDo
 
-[x] Use poetry to build package
-[x] Add command line entry point for quantize script
-[x] Publish wheel to PyPI
-[ ] Add chat interface based on tinygrad
+- [x] Use poetry to build package
+- [x] Add command line entry point for quantize script
+- [x] Publish wheel to PyPI
+- [ ] Add chat interface based on tinygrad
