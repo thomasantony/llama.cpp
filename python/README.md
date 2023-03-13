@@ -26,3 +26,9 @@ Convert the weights to GGML format using `convert-pth-to-ggml.py` and use the `l
 python3 convert-pth-to-ggml.py models/7B/ 1
 llamacpp-quantize ./models/7B/
 ```
+## ToDo
+
+[x] Use poetry to build package
+[x] Add command line entry point for quantize script
+[x] Publish wheel to PyPI
+[ ] Add chat interface based on tinygrad
