@@ -89,4 +89,6 @@ PYBIND11_MODULE(llamacpp, m) {
         .def(py::init<>(&PyLLAMA::init))
         .def("init", &PyLLAMA::init, "Initialize the LLaMA model")
         .def("predict", &PyLLAMA::predict, "Predict the next token");
+
+    m.def("llama_model_quantize", &llama_model_quantize, "Quantize the LLaMA model");
 }

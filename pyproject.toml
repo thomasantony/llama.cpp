@@ -24,3 +24,6 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry.build]
 script = "build.py"
 generate-setup-file = true
+
+[tool.poetry.scripts]
+llamacpp-quantize = 'llamacpp.quantize:main'
