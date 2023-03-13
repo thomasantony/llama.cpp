@@ -34,7 +34,7 @@ llamacpp-convert ./models/7B/ 1
 llamacpp-quantize ./models/7B/
 ```
 
-## Run demo script
+## Run this demo script
 
 ```
 import llamacpp
